@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+section #bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./imgs/new-york.jpg);
+  background-position: center;
+  /* here */
+  background-size: calc(100% + var(--mouse-x));
+  transition: 0.5s;
+}
+section .girl {
+  position: absolute;
+  top: 0;
+  width: 350px;
+  left: 50%;
+  /* here */
+  max-width: calc(350px - var(--mouse-x) / 10);
+  /* 
+ المتغير بتاعنا وقسمنا 
+ علي ال 10 عشان نعرف اشمعنا 10 جرب تغير الرقم 10 ل
+  مثلا 2 هتلاقي صوره البنت بتعبد اكتر ومش هتكون كويسه وحطينا 350
+   عشان دي الحجم بتاع الصوره 
+ */
+
+  transition: 0.5s;
+}
+section h2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
+  font-size: 5rem;
+  /* here */
+
+  /* الاصل كانت كدا  */
+  /* transition: translate(0,-50%); */
+  /* بعد ال جافاسكريبت  بقت كدا  */
+  transform: translate(calc(100% - var(--mouse-x) * 2), -50%);
+  /*  عادي نفس الكلام غير الارقام وهتعرف الفرق  */
+  transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+  section #bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./imgs/new-york.jpg);
+    background-position: center;
+    transition: 0.5s;
+  }
+  section h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  section .girl {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    left: 50%;
+  }
+}
+@media (max-width: 500px) {
+  section #bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./imgs/new-york.jpg);
+    background-position: center;
+    transition: 0.5s;
+  }
+  section h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  section .girl {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    left: 35%;
+  }
+}
